@@ -31,7 +31,7 @@ function goToCart() {
       </router-link>
 
       <nav class="flex items-center gap-4">
-          <!-- Ikon keranjang + badge jumlah item, mirip Shopee -->
+
           <button class="relative rounded-lg p-2 text-ink transition-colors hover:bg-surface-alt" @click="goToCart" aria-label="Keranjang">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-6 w-6">
               <path d="M3 3h2l.4 2M7 13h10l3-8H5.4M7 13L5.4 5M7 13l-1.6 4h11.2M9 21a1 1 0 100-2 1 1 0 000 2zM18 21a1 1 0 100-2 1 1 0 000 2z" stroke-linecap="round" stroke-linejoin="round" />
@@ -55,7 +55,6 @@ function goToCart() {
             Booking Service
           </router-link>
 
-
         <template v-if="auth.isLoggedIn">
           <span class="hidden text-sm text-muted sm:inline">Halo, {{ auth.user.nama }}</span>
           <button class="btn-outline" @click="handleLogout">Keluar</button>
@@ -65,6 +64,7 @@ function goToCart() {
             to="/booking-service"
             class="hidden rounded-lg px-3 py-2 text-sm text-muted transition-colors hover:text-ink sm:inline-block"
           >
+            Booking Service
           </router-link>
           <router-link class="btn-outline" to="/login">Masuk</router-link>
           <router-link class="btn-primary" to="/register">Daftar</router-link>

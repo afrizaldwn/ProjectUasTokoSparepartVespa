@@ -5,6 +5,7 @@ import NavbarUser from '../../components/NavbarUser.vue'
 import sparepartService from '../../services/sparepartService'
 import { useAuthStore } from '../../store/auth'
 import { useCartStore } from '../../store/cart'
+import { SERVER_BASE_URL } from '../../services/api'
 
 const props = defineProps({ id: { type: String, required: true } })
 
@@ -23,11 +24,11 @@ function formatRupiah(value) {
 
 function gambarUrl(gambar) {
   if (!gambar) return 'https://via.placeholder.com/500x400?text=Sparepart+Vespa'
-  return gambar.startsWith('http') ? gambar : `/img/${gambar}`
+  return gambar.startsWith('http') ? gambar : `${SERVER_BASE_URL}/img/${gambar}`
 }
 
 function handleAddToCart() {
-  // "setelah user login" -> kalau belum login, arahkan ke halaman login dulu
+
   if (!auth.isLoggedIn || auth.isAdmin) {
     router.push({ name: 'login' })
     return

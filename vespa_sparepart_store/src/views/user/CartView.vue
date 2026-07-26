@@ -2,6 +2,7 @@
 import { useRouter } from 'vue-router'
 import NavbarUser from '../../components/NavbarUser.vue'
 import { useCartStore } from '../../store/cart'
+import { SERVER_BASE_URL } from '../../services/api'
 
 const router = useRouter()
 const cart = useCartStore()
@@ -12,7 +13,7 @@ function formatRupiah(value) {
 
 function gambarUrl(gambar) {
   if (!gambar) return 'https://via.placeholder.com/100x100?text=Vespa'
-  return gambar.startsWith('http') ? gambar : `/img/${gambar}`
+  return gambar.startsWith('http') ? gambar : `${SERVER_BASE_URL}/img/${gambar}`
 }
 
 function goToCheckout() {

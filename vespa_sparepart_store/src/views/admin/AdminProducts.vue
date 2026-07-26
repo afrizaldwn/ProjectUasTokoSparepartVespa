@@ -5,6 +5,7 @@ import sparepartService from '../../services/sparepartService'
 import logService from '../../services/logService'
 import uploadService from '../../services/uploadService'
 import { useAuthStore } from '../../store/auth'
+import { SERVER_BASE_URL } from '../../services/api'
 
 const auth = useAuthStore()
 function currentUsername() {
@@ -31,7 +32,7 @@ const uploading = ref(false)
 function gambarUrl(filename) {
   if (!filename) return ''
   // Sudah berupa URL penuh (data lama) atau nama file di folder img
-  return filename.startsWith('http') ? filename : `/img/${filename}`
+  return filename.startsWith('http') ? filename : `${SERVER_BASE_URL}/img/${filename}`
 }
 
 function handleFileChange(e) {
@@ -202,7 +203,6 @@ onMounted(fetchData)
         </table>
       </div>
 
-      <!-- Modal form Create/Update -->
       <div
         v-if="showForm"
         class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-6"

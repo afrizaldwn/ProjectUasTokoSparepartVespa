@@ -2,6 +2,7 @@
 import { useRouter } from 'vue-router'
 import { useAuthStore } from '../store/auth'
 import { useCartStore } from '../store/cart'
+import { SERVER_BASE_URL } from '../services/api'
 
 const props = defineProps({
   item: { type: Object, required: true }
@@ -15,10 +16,9 @@ function formatRupiah(value) {
   return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(value || 0)
 }
 
-// Gambar yang diupload admin disimpan sebagai nama file di folder public/img
 function gambarUrl(gambar) {
   if (!gambar) return 'https://via.placeholder.com/300x220?text=Sparepart+Vespa'
-  return gambar.startsWith('http') ? gambar : `/img/${gambar}`
+  return gambar.startsWith('http') ? gambar : `${SERVER_BASE_URL}/img/${gambar}`
 }
 
 function quickAdd() {

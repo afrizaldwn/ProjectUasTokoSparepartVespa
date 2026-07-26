@@ -1,7 +1,6 @@
 <script setup>
 import { useRouter } from 'vue-router'
 import { useAuthStore } from '../store/auth'
-import logo from '../assets/piaggio1.png'
 
 const router = useRouter()
 const auth = useAuthStore()
@@ -15,7 +14,7 @@ function handleLogout() {
 <template>
   <aside class="flex min-h-screen w-60 flex-col border-r border-border bg-surface px-6 py-8">
     <div class="mb-10 flex items-center gap-3">
-      <img :src="logo" alt="Logo" class="h-9 w-9 rounded-full object-cover" />
+      <span class="flex h-9 w-9 items-center justify-center rounded-full border border-brass font-display text-lg text-brass-light">V</span>
       <span class="font-display text-base tracking-wide text-ink">Admin Panel</span>
     </div>
 
@@ -37,6 +36,13 @@ function handleLogout() {
       </router-link>
       <router-link
         to="/admin/kategori"
+        class="rounded-lg px-3 py-2 text-sm text-muted transition-colors hover:bg-surface-alt hover:text-ink"
+        active-class="!bg-brass/10 !text-brass-light"
+      >
+        Kategori
+      </router-link>
+      <router-link
+        to="/admin/booking-service"
         class="rounded-lg px-3 py-2 text-sm text-muted transition-colors hover:bg-surface-alt hover:text-ink"
         active-class="!bg-brass/10 !text-brass-light"
       >

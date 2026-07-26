@@ -8,7 +8,7 @@ const STORAGE_KEY = 'vespa_store_session'
 
 export const useAuthStore = defineStore('auth', {
   state: () => ({
-    user: null, // { id, nama, email, role }
+    user: null,
     loading: false,
     error: null
   }),
@@ -19,18 +19,15 @@ export const useAuthStore = defineStore('auth', {
   },
 
   actions: {
-    // Login USER: hanya berhasil kalau role === 'user'
+
     async loginUser({ email, password }) {
       return this._loginWithRole({ email, password, expectedRole: 'user' })
     },
 
-    // Login ADMIN: hanya berhasil kalau role === 'admin'
     async loginAdmin({ email, password }) {
       return this._loginWithRole({ email, password, expectedRole: 'admin' })
     },
 
-    // Logika inti login, dipakai bersama oleh loginUser & loginAdmin
-    // tapi tetap memvalidasi role masing-masing secara terpisah
     async _loginWithRole({ email, password, expectedRole }) {
       this.loading = true
       this.error = null
@@ -68,7 +65,6 @@ export const useAuthStore = defineStore('auth', {
       }
     },
 
-    // Registrasi user baru (role "user" secara default)
     async register({ nama, email, password }) {
       this.loading = true
       this.error = null
@@ -85,7 +81,7 @@ export const useAuthStore = defineStore('auth', {
         useCartStore().loadCart(data.id)
         return true
       } catch (err) {
-        console.error('REGISTER ERROR:', err) // <-- sementara untuk debug
+        console.error('REGISTER ERROR:', err)
         this.error = 'Gagal mendaftar. Coba lagi.'
         return false
       } finally {
@@ -93,7 +89,6 @@ export const useAuthStore = defineStore('auth', {
       }
     },
 
-    // Logout: hapus sesi lokal
     logout() {
       if (this.user) {
         logService.catat({
@@ -107,7 +102,6 @@ export const useAuthStore = defineStore('auth', {
       useCartStore().reset()
     },
 
-    // Restore sesi dari localStorage saat aplikasi dimuat ulang
     restoreSession() {
       const saved = localStorage.getItem(STORAGE_KEY)
       if (saved) {
@@ -116,7 +110,6 @@ export const useAuthStore = defineStore('auth', {
       }
     },
 
-    // Perbarui data diri (nama & email) milik akun yang sedang login
     async updateProfile({ nama, email }) {
       this.loading = true
       this.error = null
@@ -151,7 +144,6 @@ export const useAuthStore = defineStore('auth', {
       }
     },
 
-    // Ubah password akun yang sedang login (verifikasi password lama dulu)
     async changePassword({ passwordLama, passwordBaru, konfirmasi }) {
       this.loading = true
       this.error = null
