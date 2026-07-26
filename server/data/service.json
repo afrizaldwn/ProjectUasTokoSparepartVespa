@@ -1,0 +1,24 @@
+[
+  {
+    "id": "1784878685477",
+    "user_id": "51",
+    "nama_pelanggan": "afrzl",
+    "no_hp": "09184091894",
+    "jenis_vespa": "super sprint 66",
+    "keluhan": "kuhnfuquk",
+    "tanggal_service": "2026-07-24",
+    "biaya": 0,
+    "status": "selesai"
+  },
+  {
+    "id": "1784892225242",
+    "user_id": "52",
+    "nama_pelanggan": "Adya Tasha Apriliana",
+    "no_hp": "08123456778",
+    "jenis_vespa": "vespa",
+    "keluhan": "rem blong",
+    "tanggal_service": "2026-07-24",
+    "biaya": 0,
+    "status": "menunggu"
+  }
+]

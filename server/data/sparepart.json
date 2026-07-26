@@ -1,0 +1,74 @@
+[
+  {
+    "id": "1784888255406",
+    "nama": "Filter Oli Vespa Primavera",
+    "kategori": "Mesin",
+    "harga": 85000,
+    "stok": 10,
+    "gambar": "1784888255394-541521467.jpg",
+    "deskripsi": "Filter oli original untuk Vespa Primavera dan Sprint 150."
+  },
+  {
+    "id": "1784888410700",
+    "nama": "Busi NGK CPR8EB-9",
+    "kategori": "Mesin",
+    "harga": 45000,
+    "stok": 25,
+    "gambar": "1784888410695-898454089.jpg",
+    "deskripsi": "Busi original untuk Vespa LX, Sprint, Primavera, GTS."
+  },
+  {
+    "id": "1784888539042",
+    "nama": "Kampas Rem Belakang Vespa",
+    "kategori": "Pengereman",
+    "harga": 180000,
+    "stok": 12,
+    "gambar": "1784888539029-35974431.jpg",
+    "deskripsi": "Kampas rem belakang original untuk Vespa matic."
+  },
+  {
+    "id": "1784888639449",
+    "nama": "Belt CVT Vespa Sprint 150",
+    "kategori": "Trasnmisi",
+    "harga": 485000,
+    "stok": 10,
+    "gambar": "1784888639436-595737990.jpg",
+    "deskripsi": "Belt CVT Vespa Sprint 150"
+  },
+  {
+    "id": "1784888749294",
+    "nama": "Aki GS Astra GTZ8V",
+    "kategori": "Kelistrikan",
+    "harga": 395000,
+    "stok": 15,
+    "gambar": "1784888749288-528881918.jpg",
+    "deskripsi": "Aki maintenance free untuk Vespa Sprint dan Primavera."
+  },
+  {
+    "id": "1784888845825",
+    "nama": "Spion Original Vespa Chrome",
+    "kategori": "Body",
+    "harga": 24500,
+    "stok": 8,
+    "gambar": "1784888845813-947341195.jpg",
+    "deskripsi": "Spion original dengan finishing chrome elegan."
+  },
+  {
+    "id": "1784888938413",
+    "nama": "Cover CVT Vespa",
+    "kategori": "Body",
+    "harga": 575000,
+    "stok": 15,
+    "gambar": "1784888938402-699165199.jpg",
+    "deskripsi": "Cover CVT original berbahan aluminium berkualitas."
+  },
+  {
+    "id": "1784892528109",
+    "nama": "contoh",
+    "kategori": "mesin",
+    "harga": 100000,
+    "stok": 50,
+    "gambar": "1784892528089-479459404.jpg",
+    "deskripsi": "deskrisi"
+  }
+]

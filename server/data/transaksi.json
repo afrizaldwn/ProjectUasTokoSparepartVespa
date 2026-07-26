@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1784891982016",
+    "user_id": "52",
+    "nama_pembeli": "Adya Tasha Apriliana",
+    "items": [
+      {
+        "id": "1784888410700",
+        "nama": "Busi NGK CPR8EB-9",
+        "harga": 45000,
+        "gambar": "1784888410695-898454089.jpg",
+        "stok": 25,
+        "qty": 1
+      }
+    ],
+    "total_harga": 45000,
+    "metode_pembayaran": "e_wallet",
+    "alamat": "",
+    "status": "selesai",
+    "waktu": "2026-07-24T11:19:42.006Z"
+  }
+]

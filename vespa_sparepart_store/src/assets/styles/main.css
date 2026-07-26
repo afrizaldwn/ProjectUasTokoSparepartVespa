@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  ::selection {
+    background-color: theme('colors.brass.DEFAULT');
+    color: theme('colors.bg');
+  }
+}
+
+@layer components {
+  /* Garis pembatas tipis warna brass, elemen "signature" tema klasik-mewah */
+  .hr-brass {
+    @apply h-px w-16 bg-gradient-to-r from-brass to-transparent;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-brass
+           bg-brass px-5 py-2.5 text-sm font-medium tracking-wide text-bg
+           transition-colors hover:bg-brass-light hover:border-brass-light;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-border
+           px-5 py-2.5 text-sm font-medium tracking-wide text-ink
+           transition-colors hover:border-brass hover:text-brass-light;
+  }
+
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-danger/60
+           bg-danger/10 px-4 py-2 text-sm font-medium text-danger
+           transition-colors hover:bg-danger/20;
+  }
+
+  .input-field {
+    @apply w-full rounded-lg border border-border bg-surface-alt px-4 py-2.5 text-sm text-ink
+           placeholder:text-muted/60 focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass/50;
+  }
+
+  .card-panel {
+    @apply rounded-2xl border border-border bg-surface;
+  }
+
+  .label-eyebrow {
+    @apply text-xs font-medium uppercase tracking-[0.2em] text-brass-light;
+  }
+}
