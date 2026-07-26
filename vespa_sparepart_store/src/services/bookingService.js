@@ -3,15 +3,17 @@ import { apiLocal } from './api'
 const RESOURCE = '/service'
 
 export default {
-
+  // READ semua booking service
   getAll(params = {}) {
     return apiLocal.get(RESOURCE, { params })
   },
 
+  // READ satu booking by id
   getById(id) {
     return apiLocal.get(`${RESOURCE}/${id}`)
   },
 
+  // CREATE booking baru
   create(payload) {
     return apiLocal.post(RESOURCE, {
       user_id: payload.user_id || null,
@@ -25,6 +27,7 @@ export default {
     })
   },
 
+  // UPDATE booking (termasuk ubah status)
   update(id, payload) {
     return apiLocal.put(`${RESOURCE}/${id}`, {
       user_id: payload.user_id,
@@ -38,6 +41,7 @@ export default {
     })
   },
 
+  // DELETE booking
   remove(id) {
     return apiLocal.delete(`${RESOURCE}/${id}`)
   }

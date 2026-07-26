@@ -54,7 +54,7 @@ async function fetchRiwayat() {
     const { data } = await bookingService.getAll()
     riwayat.value = data
   } catch (err) {
-
+    // riwayat gagal dimuat bukan error fatal, form booking tetap bisa dipakai
   } finally {
     loadingRiwayat.value = false
   }

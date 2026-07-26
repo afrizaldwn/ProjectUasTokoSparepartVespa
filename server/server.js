@@ -1,3 +1,19 @@
+/**
+ * Server lokal Vespa Parts Store
+ * -------------------------------
+ * Server ini HANYA menangani:
+ *   - Konten: sparepart, kategori, service (booking), logs (audit trail)
+ *   - Upload gambar -> disimpan fisik ke folder ../vespa-parts-store/public/img
+ *
+ * Login & register (data akun/users) TIDAK lewat server ini,
+ * itu tetap langsung ke MockAPI dari frontend (lihat src/services/api.js -> apiMock).
+ *
+ * Cara jalankan:
+ *   cd server
+ *   npm install
+ *   npm start
+ *   -> server jalan di http://localhost:5000
+ */
 
 const express = require('express')
 const cors = require('cors')
@@ -11,11 +27,16 @@ app.use(express.json())
 
 const DATA_DIR = path.join(__dirname, 'data')
 
+// Folder gambar disimpan di dalam folder server sendiri,
+// dan disajikan langsung oleh Express lewat /img/... (lihat app.use di bawah).
+// Ini penting supaya tetap jalan saat backend & frontend di-deploy terpisah.
 const IMG_DIR = path.join(__dirname, 'public/img')
 if (!fs.existsSync(IMG_DIR)) fs.mkdirSync(IMG_DIR, { recursive: true })
 
+// Sajikan folder gambar sebagai static file, bisa diakses lewat: <backend_url>/img/nama-file.jpg
 app.use('/img', express.static(IMG_DIR))
 
+// ---------- Upload gambar ----------
 const storage = multer.diskStorage({
   destination: (req, file, cb) => cb(null, IMG_DIR),
   filename: (req, file, cb) => {
@@ -33,6 +54,7 @@ app.post('/api/upload', upload.single('gambar'), (req, res) => {
   res.json({ filename: req.file.filename })
 })
 
+// ---------- Helper baca/tulis JSON ----------
 function readJson(filename) {
   const filePath = path.join(DATA_DIR, filename)
   if (!fs.existsSync(filePath)) fs.writeFileSync(filePath, '[]')
@@ -44,6 +66,7 @@ function writeJson(filename, data) {
   fs.writeFileSync(filePath, JSON.stringify(data, null, 2))
 }
 
+// ---------- Generic CRUD untuk tiap resource JSON ----------
 function registerCrud(resource, filename) {
   app.get(`/api/${resource}`, (req, res) => {
     res.json(readJson(filename))

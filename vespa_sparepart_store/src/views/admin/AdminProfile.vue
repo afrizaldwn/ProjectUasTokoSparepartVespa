@@ -61,7 +61,7 @@ async function handleUpdatePassword() {
       <p class="mt-1 text-sm text-muted">Kelola data diri dan keamanan akun Anda.</p>
 
       <div class="mt-8 flex max-w-xl flex-col gap-6">
-
+        <!-- Data Diri -->
         <form class="card-panel p-7" @submit.prevent="handleUpdateProfil">
           <h2 class="font-display text-xl text-ink">👤 Data Diri</h2>
 
@@ -100,6 +100,7 @@ async function handleUpdatePassword() {
           </button>
         </form>
 
+        <!-- Ubah Password -->
         <form class="card-panel p-7" @submit.prevent="handleUpdatePassword">
           <h2 class="font-display text-xl text-ink">🔒 Ubah Password</h2>
 

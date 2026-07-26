@@ -28,7 +28,7 @@ function gambarUrl(gambar) {
 }
 
 function handleAddToCart() {
-
+  // "setelah user login" -> kalau belum login, arahkan ke halaman login dulu
   if (!auth.isLoggedIn || auth.isAdmin) {
     router.push({ name: 'login' })
     return

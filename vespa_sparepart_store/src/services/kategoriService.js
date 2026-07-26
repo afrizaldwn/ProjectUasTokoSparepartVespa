@@ -3,15 +3,17 @@ import { apiLocal } from './api'
 const RESOURCE = '/kategori'
 
 export default {
-
+  // READ semua kategori
   getAll(params = {}) {
     return apiLocal.get(RESOURCE, { params })
   },
 
+  // READ satu kategori by id
   getById(id) {
     return apiLocal.get(`${RESOURCE}/${id}`)
   },
 
+  // CREATE kategori baru
   create(payload) {
     return apiLocal.post(RESOURCE, {
       nama_kategori: payload.nama_kategori,
@@ -27,6 +29,7 @@ export default {
     })
   },
 
+  // DELETE kategori
   remove(id) {
     return apiLocal.delete(`${RESOURCE}/${id}`)
   }
